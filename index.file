@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arohi Therapy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5fbff;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #168aad, #52b69a);
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #fff3b0;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(120deg, #d9f3f0, #eaf7ff);
+        }
+
+        .hero-text {
+            width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            color: #126782;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h2 {
+            color: #52b69a;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #168aad;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #0b6079;
+        }
+
+        .hero img {
+            width: 42%;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px #999;
+        }
+
+        /* COMMON */
+        section {
+            padding: 70px 8%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 36px;
+            color: #126782;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 45%;
+            border-radius: 20px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* SERVICES */
+        .services {
+            background: #eaf7f5;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px #c8d8dc;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #168aad;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px #bbb;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #d9f3f0;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px #b9cccc;
+            line-height: 2;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #126782;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 7px;
+        }
+
+        /* MOBILE */
+        @media(max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 7px;
+                display: inline-block;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero img {
+                width: 90%;
+                margin-top: 30px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about img {
+                width: 100%;
+            }
+
+            .cards,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">🌿 Arohi Therapy</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div class="hero-text">
+        <h1>Arohi Therapy</h1>
+
+        <h2>Care • Comfort • Wellness</h2>
+
+        <p>
+            Welcome to Arohi Therapy.  
+            We believe that every person deserves care,
+            support and a peaceful environment.
+        </p>
+
+        <a href="#contact" class="btn">Contact Us</a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80"
+         alt="Therapy">
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <h2 class="title">About Arohi Therapy</h2>
+
+    <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"
+             alt="Therapy Care">
+
+        <div class="about-text">
+
+            <p>
+                <b>Arohi Therapy</b> is a caring and welcoming place
+                focused on wellbeing and personal care.
+            </p>
+
+            <br>
+
+            <p>
+                Our goal is to create a comfortable environment where
+                people can receive professional guidance and support.
+            </p>
+
+            <br>
+
+            <p>
+                We believe that good care, patience and positive
+                thinking can help people move towards a healthier
+                and happier life.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+    <h2 class="title">Our Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=80">
+
+            <h3>Personal Therapy</h3>
+
+            <p>
+                Individual sessions designed according
+                to personal needs and comfort.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80">
+
+            <h3>Wellness Support</h3>
+
+            <p>
+                Guidance and support for a peaceful
+                and healthy lifestyle.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=700&q=80">
+
+            <h3>Relaxation</h3>
+
+            <p>
+                Calm surroundings and relaxation-focused
+                sessions for overall wellbeing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery">
+
+    <h2 class="title">Our Gallery</h2>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=800&q=80">
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2 class="title">Contact Us</h2>
+
+    <div class="contact-box">
+
+        <p>📍 <b>Address:</b> Arohi Therapy Centre, Unchgaon, Maharashtra</p>
+
+        <p>📞 <b>Contact:</b> +91 98765 43210</p>
+
+        <p>📧 <b>Email:</b> arohitherapy@gmail.com</p>
+
+        <p>🕘 <b>Timings:</b> Monday - Saturday | 9:00 AM - 7:00 PM</p>
+
+        <br>
+
+        <a href="tel:+919876543210" class="btn">
+            Call Now
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h2>🌿 Arohi Therapy</h2>
+
+    <p>Care • Comfort • Wellness</p>
+
+    <p>© 2026 Arohi Therapy. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
